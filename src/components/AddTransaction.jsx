@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
+import { GlobalContext } from '../context/GlobalState';
+import { useContext } from 'react';
 /*import { useNavigate } from "react-router-dom";*/
 import axios from "axios";
 
@@ -8,13 +10,16 @@ function AddTransaction() {
 
 const [text, setText] = useState("");
 const [amount, setAmount] = useState(0);
+const {addTransaction} = useContext(GlobalContext); 
+
 /* const navigate = useNavigate(); */
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    const transaction = { text, amount };
+    const newTransaction = { text, amount: +amount };
 
+    addTransaction(newTransaction);
 /*     axios
       .post("/api/transaction", transaction)
       .then(() => navigate("/transactions"))
