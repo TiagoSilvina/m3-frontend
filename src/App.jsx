@@ -1,27 +1,32 @@
-import { useState } from 'react'
+import { Routes, Route } from 'react-router-dom';
 import './App.css'
 
-// Import Components //////////////////////////////////////////////////
-import Header from './components/Header';
-import Balance from './components/Balance';
-import IncomeExpenses from './components/IncomeExpenses';
-import TransactionList from './components/TransactionList';
-import AddTransaction from './components/AddTransaction'
+// Import Pages //////////////////////////////////////////////////
+import Home from "./pages/Home";
+import Error from './pages/Error';
+import Signup from './pages/Signup';
+import Login from "./pages/Login";
+import TransactionListPage from './pages/TransactionListPage';
+import TransactionDetailsPage from './pages/TransactionDetailsPage';
+import TransactionEditPage from './pages/TransactionEditPage';
+import AddTransactionPage from './pages/AddTransaction';
 
-import { GlobalProvider } from './context/GlobalState';
 
 function App() {
 
   return (
-  <GlobalProvider>
-    <Header />
-    <div className='container'>
-      <Balance />
-      <IncomeExpenses />
-      <TransactionList />
-      <AddTransaction />
+    <div>
+    <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/signup" element={<Signup />}/>
+        <Route path="/login" element={<Login />}/>
+        <Route path="/transactions" element={<TransactionListPage />} />
+        <Route path="/transactions/:id" element={<TransactionDetailsPage />} />
+        <Route path="/edit-transaction/:id" element={<TransactionEditPage />} />
+        <Route path="/add-transaction" element={<AddTransactionPage />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
       </div>
-  </GlobalProvider>
   )
 }
 
