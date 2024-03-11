@@ -12,10 +12,6 @@ function Home() {
     <br></br>
     <Link to="/transactions">list</Link>
     <br></br>
-    <Link to="/transactions/:id">details</Link>
-    <br></br>
-    <Link to="/edit-transaction/:id">list</Link>
-    <br></br>
     <Link to="/add-transaction">add</Link>
     </div>
     

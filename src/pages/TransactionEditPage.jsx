@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { Link } from 'react-router-dom';
 
 import transactionsService from "../services/transactions.service";
 
@@ -9,6 +10,10 @@ function TransactionEditPage() {
     const [transaction, setTransaction] = useState({});
     const [text, setText] = useState("");
     const [amount, setAmount] = useState(0);
+    const [date, setDate] = useState(new Date());
+    const [type, setType] = useState("");
+    const [category, setCategory] = useState("");
+    const [description, setDescription] = useState("");
     const { id } = useParams();
     const navigate = useNavigate();
 
@@ -31,7 +36,13 @@ useEffect(() => {
 const handleSubmit = (e) => {
   e.preventDefault();
 
-  const updatedTransaction = { text, amount };
+  const updatedTransaction =
+  {text,
+    amount,
+    date,
+    type,
+    description,
+    category};
 
   updateTransaction(id, updatedTransaction)
     .then(() => {
@@ -55,19 +66,111 @@ const handleDelete = () => {
 
   return(
     <div>
+      <Link to="/">Return to Home Page</Link>
       <h3>Edit transaction</h3>
       <form onSubmit={handleSubmit}>
+
         <div className="form-control">
-          <label>Description</label>
-          <input type="text" placeholder="Enter description..." 
-          onChange={(e) => setText(e.target.value)}/>
+        <label>name</label>
+        <input
+        value={text}
+        name="text"
+        type="text"
+        required
+        placeholder="Enter name..."
+        onChange={(e) => setText(e.target.value)}
+        />
         </div>
+
         <div className="form-control">
-          <label>Amount <br />
-            (negative - expense, positive - income)</label>
-          <input type="number" placeholder="Enter amount..." 
-          onChange={(e) => setAmount(e.target.value)} />
+        <label>Expense</label>
+        <input 
+        value="expense"
+        name="type" 
+        type="radio" 
+        onChange={(e) => setType(e.target.value)}
+        ></input>
+        <label>Income</label>
+        <input 
+        value="income"
+        name="type" 
+        type="radio" 
+        onChange={(e) => setType(e.target.value)}
+        ></input>
         </div>
+
+        <div className="form-control">
+        {type === "expense" && (
+        <label>
+        Category:
+        <select 
+        value={category}
+        name="category"
+        type="text"
+        onChange={(e) => setCategory(e.target.value)} >
+        <option value="Miscellaneous">Miscellaneous</option>
+        <option value="Debt Payments">Debt Payments</option>
+        <option value="Education">Education</option>
+        <option value="Entertainment">Entertainment</option>
+        <option value="Food">Food</option>
+        <option value="Healthcare">Healthcare</option>
+        <option value="Housing">Housing</option>
+        <option value="Insurance">Insurance</option>
+        <option value="Transportation">Transportation</option>
+        </select>
+        </label>
+        )}
+        </div>
+
+        <div className="form-control">
+        {type === "income" && (
+        <label>
+        Category:
+        <select 
+        value={category}
+        name="category"
+        type="text"
+        onChange={(e) => setCategory(e.target.value)}>
+        <option value="salary" >salary</option>
+        <option value="investments">investments</option>
+        <option value="miscellaneous">miscellaneous</option>
+        </select>
+        </label>)}
+        </div>
+
+        <div className="form-control">
+        <label>Description</label>
+        <input
+        value={description}
+        name="description"
+        type="text"
+        placeholder="Enter description..."
+        onChange={(e) => setDescription(e.target.value)}
+        />
+        </div>
+
+        <div className="form-control">
+        <label>Amount</label>
+        <input
+        value={amount}
+        name="amount"
+        type="number"
+        required
+        placeholder="Enter amount..."
+        onChange={(e) => setAmount(e.target.value)}
+        />
+        </div>
+
+        <div className="form-control">
+        <label>Date</label>
+        <input
+        value={date}
+        name="date"
+        type="date"
+        onChange={(e) => setDate(e.target.value)}
+        />
+        </div>
+
         <button className="btn">Edit transaction</button>
       </form>
         <button className="btn"

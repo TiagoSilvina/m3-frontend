@@ -1,6 +1,7 @@
 /* Import React / React-Router-Dom Features  */
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 /* Import Axios Service */
 import authService from "../services/auth.service";
@@ -34,9 +35,10 @@ function Signup() {
 
   return (
     <div>
+      <Link to="/">Return to Home Page</Link>
       <h1>Sign-up Page</h1>
       <form onSubmit={handleSignUpSubmit}>
-        <div>
+        <div className="form-control">
           <label>Email:</label>
           <input
             type="email"
@@ -45,7 +47,7 @@ function Signup() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div>
+        <div className="form-control">
           <label>Password:</label>
           <input
             type="password"
@@ -54,7 +56,7 @@ function Signup() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <div>
+        <div className="form-control">
           <label>Username:</label>
           <input
             type="text"
@@ -64,7 +66,7 @@ function Signup() {
           />
         </div>
         <div>
-          <button type="submit">Sign Up</button>
+          <button className="btn" type="submit">Sign Up</button>
         </div>
         {error && <p>{error}</p>}
       </form>

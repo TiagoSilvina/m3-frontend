@@ -1,6 +1,7 @@
 /* Import React / React-Router-Dom Features  */
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 /* Import Context */
 import { AuthContext } from "../context/auth.context";
@@ -38,9 +39,10 @@ function Login() {
 
   return (
     <div>
+      <Link to="/">Return to Home Page</Link>
       <h1>Login Page</h1>
       <form onSubmit={handleLoginSubmit}>
-        <div>
+        <div className="form-control">
           <label>Email:</label>
           <input
             type="email"
@@ -49,7 +51,7 @@ function Login() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div>
+        <div className="form-control">
           <label>Password:</label>
           <input
             type="password"
@@ -59,7 +61,7 @@ function Login() {
           />
         </div>
         <div>
-          <button type="submit">Login</button>
+          <button className="btn" type="submit">Login</button>
         </div>
         {error && <p>{error}</p>}
       </form>
