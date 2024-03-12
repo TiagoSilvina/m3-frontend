@@ -68,11 +68,17 @@ h4 {
   margin: 5px 0;
 }
 
-.money.plus {
+.money-plus {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 5px 0;
   color: #2ecc71;
 }
 
-.money.minus {
+.money-minus {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 5px 0;
   color: #c0392b;
 }
 
@@ -154,4 +160,11 @@ input[type='number'] {
 
 .list li:hover .delete-btn {
   opacity: 1;
+}
+
+.receipt{
+  width: 150px;
+  height: auto;
+  display: flex;
+  justify-content: center;
 }

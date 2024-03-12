@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";import React from 'react';
 
 import transactionsService from "../services/transactions.service";
 
+import Balance from "../components/Balance";
+
 function TransactionListPage() {
   const [transactions, setTransactions] = useState([]);
 
   useEffect(() => {
-    transactionsService
+    transactionsServicesrc/pages/TransactionListPage.jsx
       .getAllTransactions()
       .then((response) => setTransactions(response.data))
       .catch((error) => console.log(error));
@@ -19,6 +21,7 @@ function TransactionListPage() {
     <Link className="link-button" to="/add-transaction">
     <h1>Add Transaction</h1>
     </Link>
+    <Balance />
       {transactions &&
         transactions.map((transaction) => {
           return (

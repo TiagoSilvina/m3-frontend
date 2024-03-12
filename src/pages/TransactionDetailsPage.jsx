@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 
+import Balance from '../components/Balance';
+
+
 import transactionsService from "../services/transactions.service";
 
 
@@ -19,6 +22,7 @@ function TransactionDetailsPage() {
 
   return (
     <div>
+      <Balance/>
         {transaction && (
         <div>
           <Link to="/">Return to Home Page</Link>
@@ -28,6 +32,9 @@ function TransactionDetailsPage() {
           <p>{transaction.type}</p>
           <p>{transaction.description}</p>
           <p>{transaction.category}</p>
+          <div className="receipt" >
+            <img src={transaction.img} alt="picture of receipt"/>
+          </div>
           <Link to="/transactions">Back</Link>
         </div>
       )}

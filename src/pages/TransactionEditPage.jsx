@@ -1,19 +1,22 @@
 import React from 'react';
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import axios from "axios";
 import { Link } from 'react-router-dom';
+
+import Balance from '../components/Balance';
 
 import transactionsService from "../services/transactions.service";
 
 function TransactionEditPage() {
     const [transaction, setTransaction] = useState({});
     const [text, setText] = useState("");
-    const [amount, setAmount] = useState(0);
-    const [date, setDate] = useState(new Date());
     const [type, setType] = useState("");
     const [category, setCategory] = useState("");
     const [description, setDescription] = useState("");
+    const [amount, setAmount] = useState(0);
+    const [date, setDate] = useState(new Date());
+    const [receipt, setReceipt] = useState("");
+
     const { id } = useParams();
     const navigate = useNavigate();
 
@@ -37,12 +40,13 @@ const handleSubmit = (e) => {
   e.preventDefault();
 
   const updatedTransaction =
-  {text,
-    amount,
-    date,
-    type,
-    description,
-    category};
+    {text,
+      amount,
+      date,
+      type,
+      description,
+      category,
+      receipt};
 
   updateTransaction(id, updatedTransaction)
     .then(() => {
@@ -67,6 +71,7 @@ const handleDelete = () => {
   return(
     <div>
       <Link to="/">Return to Home Page</Link>
+      <Balance/>
       <h3>Edit transaction</h3>
       <form onSubmit={handleSubmit}>
 
@@ -170,6 +175,17 @@ const handleDelete = () => {
         onChange={(e) => setDate(e.target.value)}
         />
         </div>
+
+        <div className="form-control">
+      <label>Add Receipt</label>
+      <input
+      value={receipt}
+      name="receipt"
+      type="text"
+      placeholder="url of receipt (optional)"
+      onChange={(e) => setReceipt(e.target.value)}
+      />
+      </div>
 
         <button className="btn">Edit transaction</button>
       </form>

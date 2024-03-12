@@ -8,10 +8,11 @@ import transactionsService from "../services/transactions.service";
 function AddTransactionPage() {
   const [text, setText] = useState("");
   const [type, setType] = useState("");
-  const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
+  const [description, setDescription] = useState("");
   const [amount, setAmount] = useState(0);
   const [date, setDate] = useState(new Date());
+  const [receipt, setReceipt] = useState("");
 
   // Initialize Navigate
   const navigate = useNavigate();
@@ -23,11 +24,12 @@ function AddTransactionPage() {
 
     const transaction =
      {text,
+      type,
+      category,
+      description,
       amount,
       date,
-      type,
-      description,
-      category};
+      receipt};
 
     createTransaction(transaction)
     .then(() => navigate("/transactions"))
@@ -137,6 +139,17 @@ function AddTransactionPage() {
       name="date"
       type="date"
       onChange={(e) => setDate(e.target.value)}
+      />
+      </div>
+
+      <div className="form-control">
+      <label>Add Receipt</label>
+      <input
+      value={receipt}
+      name="receipt"
+      type="text"
+      placeholder="url of receipt (optional)"
+      onChange={(e) => setReceipt(e.target.value)}
       />
       </div>
 
