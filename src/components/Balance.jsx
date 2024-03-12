@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import transactionsService from "../services/transactions.service";
-
+import IncomeExpenses from "./IncomeExpenses";
 
 function Balance() {
     const [transactions, setTransactions] = useState([]);
@@ -22,6 +22,7 @@ function Balance() {
     <div>
     <h2>Balance</h2>
     <h3 className={color}>{total}€</h3>
+    <IncomeExpenses/>
     </div>
   )
 }

@@ -8,7 +8,6 @@ import Balance from '../components/Balance';
 import transactionsService from "../services/transactions.service";
 
 function TransactionEditPage() {
-    const [transaction, setTransaction] = useState({});
     const [text, setText] = useState("");
     const [type, setType] = useState("");
     const [category, setCategory] = useState("");
@@ -28,8 +27,13 @@ function TransactionEditPage() {
 useEffect(() => {
   getTransaction(id)
     .then((response) => {
-      setName(response.data.text);
-      setDescription(response.data.amount);
+      setText(response.data.text);
+      setType(response.data.type);
+      setCategory(response.data.category);
+      setDescription(response.data.description);
+      setAmount(response.data.amount);
+      setDate(response.data.date);
+      setReceipt(response.data.receipt);
     })
     .catch((error) => console.log(error));
 }, [id]);
@@ -113,7 +117,8 @@ const handleDelete = () => {
         name="category"
         type="text"
         onChange={(e) => setCategory(e.target.value)} >
-        <option value="Miscellaneous">Miscellaneous</option>
+        <option value="">----</option>
+        <option value="Other">Other</option>
         <option value="Debt Payments">Debt Payments</option>
         <option value="Education">Education</option>
         <option value="Entertainment">Entertainment</option>
@@ -136,9 +141,10 @@ const handleDelete = () => {
         name="category"
         type="text"
         onChange={(e) => setCategory(e.target.value)}>
-        <option value="salary" >salary</option>
-        <option value="investments">investments</option>
-        <option value="miscellaneous">miscellaneous</option>
+        <option value="">----</option>
+        <option value="Paycheck" >Paycheck</option>
+        <option value="Investments">Investments</option>
+        <option value="Other">Other</option>
         </select>
         </label>)}
         </div>
@@ -155,7 +161,7 @@ const handleDelete = () => {
         </div>
 
         <div className="form-control">
-        <label>Amount</label>
+        <label>Amount (- for expenses)</label>
         <input
         value={amount}
         name="amount"

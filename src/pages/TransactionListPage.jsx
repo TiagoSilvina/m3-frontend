@@ -1,44 +1,19 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";import React from 'react';
-
+import { useState, useEffect } from "react";
+import Balance from '../components/Balance';
+import TransactionCard from "../components/TransactionCard";
 import transactionsService from "../services/transactions.service";
 
-import Balance from "../components/Balance";
-
 function TransactionListPage() {
-  const [transactions, setTransactions] = useState([]);
-
-  useEffect(() => {
-    transactionsServicesrc/pages/TransactionListPage.jsx
-      .getAllTransactions()
-      .then((response) => setTransactions(response.data))
-      .catch((error) => console.log(error));
-  }, []);
 
   return (
-<div>
+    <div>
     <Link to="/">Return to Home Page</Link>
-    <Link className="link-button" to="/add-transaction">
-    <h1>Add Transaction</h1>
-    </Link>
-    <Balance />
-      {transactions &&
-        transactions.map((transaction) => {
-          return (
-            <div key={transaction._id} >
-              <Link to={`/transactions/${transaction._id}`}>
-                <h3>{transaction.text}</h3>
-                <p>{transaction.amount}</p>
-                <p>{transaction.description}</p>
-                <p>{transaction.category}</p>
-                <p>{transaction.date}</p>
-              </Link>
-              <Link to={`/edit-transaction/${transaction._id}`}>
-                <p>Edit transaction</p>
-              </Link>
-            </div>
-          );
-        })}
+    <Balance/>
+            <Link className="add-button" to="/add-transaction">
+            <h1>Add Transaction</h1>
+            </Link>
+            <TransactionCard/>
     </div>
   )
 }

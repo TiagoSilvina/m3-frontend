@@ -168,3 +168,9 @@ input[type='number'] {
   display: flex;
   justify-content: center;
 }
+
+.add-btn{
+  background-color: #9c88ff;
+  border-radius: 50;
+  color:white;
+}

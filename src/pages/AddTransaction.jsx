@@ -10,7 +10,7 @@ function AddTransactionPage() {
   const [type, setType] = useState("");
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState();
   const [date, setDate] = useState(new Date());
   const [receipt, setReceipt] = useState("");
 
@@ -79,7 +79,8 @@ function AddTransactionPage() {
       name="category"
       type="text"
       onChange={(e) => setCategory(e.target.value)} >
-      <option value="Miscellaneous">Miscellaneous</option>
+      <option value="">----</option>
+      <option value="Other">Other</option>
       <option value="Debt Payments">Debt Payments</option>
       <option value="Education">Education</option>
       <option value="Entertainment">Entertainment</option>
@@ -102,9 +103,10 @@ function AddTransactionPage() {
       name="category"
       type="text"
       onChange={(e) => setCategory(e.target.value)}>
-      <option value="Salary" >salary</option>
-      <option value="Investments">investments</option>
-      <option value="Miscellaneous">miscellaneous</option>
+      <option value="">----</option>
+      <option value="Paycheck" >Paycheck</option>
+      <option value="Investments">Investments</option>
+      <option value="Other">Other</option>
       </select>
       </label>)}
       </div>
@@ -121,7 +123,7 @@ function AddTransactionPage() {
       </div>
       
       <div className="form-control">
-      <label>Amount</label>
+      <label>Amount (- for expenses)</label>
       <input
       value={amount}
       name="amount"
@@ -151,7 +153,7 @@ function AddTransactionPage() {
       placeholder="url of receipt (optional)"
       onChange={(e) => setReceipt(e.target.value)}
       />
-      </div>
+      </div> 
 
       <button className="btn" type="submit">Add transaction</button>
       </form>   

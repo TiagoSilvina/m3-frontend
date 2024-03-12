@@ -7,7 +7,6 @@ function Home() {
     <div>
       <h1>Home</h1>
       <br></br>
-      <Balance/>
     <Link to="/signup">signup</Link>
     <br></br>
     <Link to="/login">login</Link>

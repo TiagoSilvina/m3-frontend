@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import transactionsService from "../services/transactions.service";
 
 // Initializing Context
 const AuthContext = React.createContext();
@@ -10,6 +11,9 @@ const API_URL = "http://localhost:5005";
 function AuthProviderWrapper(props) {
   const [user, setUser] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+ /*  const [transactions, setTransactions] = useState([]); */
+
 
   /* Save the Login's JWT Token in our Browser' Storage */
   const saveToken = (token) => {
@@ -53,9 +57,31 @@ function AuthProviderWrapper(props) {
    }, []);
 
     
+   /* useEffect(() => {
+     transactionsService
+     .getAllTransactions()
+     .then((response) => setTransactions(response.data))
+     .catch((error) => console.log(error));
+    }, []);
+    
+// IncomeExpenses //////////////////////////////////////////////////
+const amounts = transactions.map(transaction => transaction.amount);
+
+const income = amounts
+  .filter(item => item > 0)
+  .reduce((acc, item) => (acc += item), 0);
+
+const expense = (
+  amounts.filter(item => item < 0).reduce((acc, item) => (acc += item), 0) *
+  -1);
+
+// Balance //////////////////////////////////////////////////
+      const total = amounts.reduce((acc, item) => (acc += item), 0); */
 
   return(
-    <AuthContext.Provider value={{isLoggedIn, user, saveToken, authenticateUser, logOut}}>
+    <AuthContext.Provider value={
+    {/* transactions,income, expense, total, */
+     isLoggedIn, user, saveToken, authenticateUser, logOut}}>
         {props.children}
     </AuthContext.Provider>
   )
