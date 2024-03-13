@@ -12,8 +12,7 @@ import authService from "../services/auth.service";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-
+  const [img, setImg] = useState("");
   const { saveToken, authenticateUser } = useContext(AuthContext);
 
   const navigate = useNavigate();
@@ -23,7 +22,7 @@ function Login() {
   const handleLoginSubmit = (e) => {
     e.preventDefault();
 
-    const reqBody = { email, password };
+    const reqBody = { email, password, img };
 
     login(reqBody)
       .then((response) => {
@@ -32,14 +31,12 @@ function Login() {
         navigate("/transactions");
       })
       .catch((error) => {
-        const errorDescription = error.data.message;
-        setError(errorDescription);
+        console.log(error);
       });
   };
 
   return (
     <div>
-      <Link to="/">Return to Home Page</Link>
       <h1>Login Page</h1>
       <form onSubmit={handleLoginSubmit}>
         <div className="form-control">
@@ -48,6 +45,7 @@ function Login() {
             type="email"
             name="email"
             value={email}
+            placeholder="Enter e-mail"
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
@@ -57,13 +55,25 @@ function Login() {
             type="password"
             name="password"
             value={password}
+            placeholder="Enter Password"
             onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <div className="form-control">
+          <label>Profile Picture</label>
+          <input
+            type="text"
+            name="img"
+            value={img}
+            placeholder="Edit picture URL"
+            onChange={(e) => setImg(e.target.value)}
           />
         </div>
         <div>
           <button className="btn" type="submit">Login</button>
+          <p>Don't have an account yet?</p>
+          <Link to={"/signup"}> Sign Up</Link>
         </div>
-        {error && <p>{error}</p>}
       </form>
     </div>
   );

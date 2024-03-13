@@ -10,21 +10,24 @@ import TransactionListPage from './pages/TransactionListPage';
 import TransactionDetailsPage from './pages/TransactionDetailsPage';
 import TransactionEditPage from './pages/TransactionEditPage';
 import AddTransactionPage from './pages/AddTransaction';
+import Navbar from './components/Navbar';
 
+import IsPrivate from "./components/IsPrivate";
+import IsAnon from "./components/IsAnon";
 
 function App() {
-
   return (
     <div>
+      <Navbar />
     <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/signup" element={<Signup />}/>
-        <Route path="/login" element={<Login />}/>
-        <Route path="/transactions" element={<TransactionListPage />} />
-        <Route path="/transactions/:id" element={<TransactionDetailsPage />} />
-        <Route path="/edit-transaction/:id" element={<TransactionEditPage />} />
-        <Route path="/add-transaction" element={<AddTransactionPage />} />
-        <Route path="*" element={<Error />} />
+        <Route path="/signup" element={<IsAnon><Signup /></IsAnon>}/>
+        <Route path="/login" element={<IsAnon><Login /></IsAnon>}/>
+        <Route path="/transactions" element={<IsPrivate><TransactionListPage /></IsPrivate>} />
+        <Route path="/transactions/:id" element={<IsPrivate><TransactionDetailsPage /></IsPrivate>} />
+        <Route path="/edit-transaction/:id" element={<IsPrivate><TransactionEditPage /></IsPrivate>} />
+        <Route path="/add-transaction" element={<IsPrivate><AddTransactionPage /></IsPrivate>} />
+        <Route path="*" element={<IsAnon><Error /></IsAnon>} />
       </Routes>
       </div>
   )

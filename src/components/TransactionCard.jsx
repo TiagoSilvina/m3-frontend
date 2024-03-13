@@ -23,9 +23,8 @@ function TransactionCard() {
             <div key={transaction._id} >
               <Link to={`/transactions/${transaction._id}`}>
                 <h3>{transaction.text}</h3>
-                <p>{transaction.amount}</p>
                 <p>{transaction.description}</p>
-                <p>{transaction.category}</p>
+                <p>{transaction.amount} €</p>
                 <p>{transaction.date}</p>
               </Link>
               <Link to={`/edit-transaction/${transaction._id}`}>

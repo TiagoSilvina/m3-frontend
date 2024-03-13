@@ -9,11 +9,14 @@ const AuthContext = React.createContext();
 const API_URL = "http://localhost:5005";
 
 function AuthProviderWrapper(props) {
+ /* Original
   const [user, setUser] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false); */
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [user, setUser] = useState(null);
 
- /*  const [transactions, setTransactions] = useState([]); */
-
+  const [transactions, setTransactions] = useState([]); 
 
   /* Save the Login's JWT Token in our Browser' Storage */
   const saveToken = (token) => {
@@ -31,15 +34,25 @@ function AuthProviderWrapper(props) {
         .then((response) => {
           setUser(response.data);
           setIsLoggedIn(true);
+          setIsLoading(false);
+
         })
-        .catch(()=>{
-          setUser(null);
+        .catch((error) => {
+          if (error) {
+            setAuthError(error.response.data.message);
+            return;
+          }
+          // If the server sends an error response (invalid token)
+          // Update state variables
           setIsLoggedIn(false);
-        })
-    }
-    else {
-        setUser(null);
-        setIsLoggedIn(false);
+          setIsLoading(false);
+          setUser(null);
+        });
+    } else {
+      // If the token is not available
+      setIsLoggedIn(false);
+      setIsLoading(false);
+      setUser(null);
     }
   };
 
@@ -57,7 +70,9 @@ function AuthProviderWrapper(props) {
    }, []);
 
     
-   /* useEffect(() => {
+// Get transactions //////////////////////////////////////////////////
+   
+ useEffect(() => {
      transactionsService
      .getAllTransactions()
      .then((response) => setTransactions(response.data))
@@ -72,20 +87,26 @@ const income = amounts
   .reduce((acc, item) => (acc += item), 0);
 
 const expense = (
-  amounts.filter(item => item < 0).reduce((acc, item) => (acc += item), 0) *
-  -1);
+  amounts.filter(item => item < 0).reduce((acc, item) => (acc += item), 0) *-1);
 
 // Balance //////////////////////////////////////////////////
-      const total = amounts.reduce((acc, item) => (acc += item), 0); */
+const total = amounts.reduce((acc, item) => (acc += item), 0); 
 
   return(
     <AuthContext.Provider value={
-    {/* transactions,income, expense, total, */
-     isLoggedIn, user, saveToken, authenticateUser, logOut}}>
+      {isLoading,
+      transactions,
+      income,
+      expense,
+      total,
+      isLoggedIn,
+      user,
+      saveToken,
+      authenticateUser,
+      logOut}}>
         {props.children}
     </AuthContext.Provider>
   )
 }
-
 
 export {AuthProviderWrapper, AuthContext};

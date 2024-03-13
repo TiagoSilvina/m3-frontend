@@ -44,6 +44,31 @@ h4 {
   text-transform: uppercase;
 }
 
+/* Navbar //////////////////////////////////////////////////*/
+.navbar{
+display: flex;;
+justify-content: space-between;
+}
+
+.nav-links{
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.nav-profile{
+  display: flex;
+  align-items: center;
+}
+.profilePic{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 3px solid black;
+}
+/* Money //////////////////////////////////////////////////*/
 .inc-exp-container {
   background-color: #fff;
   box-shadow: var(--box-shadow);
@@ -61,7 +86,6 @@ h4 {
 .inc-exp-container > div:first-of-type {
   border-right: 1px solid #dedede;
 }
-
 .money {
   font-size: 20px;
   letter-spacing: 1px;
@@ -81,6 +105,8 @@ h4 {
   margin: 5px 0;
   color: #c0392b;
 }
+
+/* Form //////////////////////////////////////////////////*/
 
 label {
   display: inline-block;
@@ -163,10 +189,13 @@ input[type='number'] {
 }
 
 .receipt{
-  width: 150px;
-  height: auto;
   display: flex;
   justify-content: center;
+}
+
+.receipt-img{
+  width: 250px;
+  height: auto;
 }
 
 .add-btn{

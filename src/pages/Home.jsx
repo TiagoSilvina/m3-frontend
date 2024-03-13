@@ -7,13 +7,11 @@ function Home() {
     <div>
       <h1>Home</h1>
       <br></br>
-    <Link to="/signup">signup</Link>
+   {/*  <Balance/> */}
     <br></br>
-    <Link to="/login">login</Link>
+    <Link to="/add-transaction">Add Transaction</Link>
     <br></br>
-    <Link to="/transactions">list</Link>
-    <br></br>
-    <Link to="/add-transaction">add</Link>
+    <Link to="/transactions">Transactions</Link>
     </div>
     
   )

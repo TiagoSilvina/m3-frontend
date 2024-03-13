@@ -37,8 +37,7 @@ function AddTransactionPage() {
   }
   return (
     <div>
-      <Link to="/">Return to Home Page</Link>
-       <h3>Add new transaction</h3>
+      <h3>Add new transaction</h3>
       <form onSubmit={handleSubmit}>
 
       <div className="form-control">

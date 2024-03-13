@@ -5,8 +5,6 @@ function Error() {
   return (
     <div>
         <h1>Something went wrong</h1>
-    <Link to="/">Return to Home Page</Link>
-
     </div>
   )
 }

@@ -3,9 +3,7 @@ import { useParams, Link } from "react-router-dom";
 
 import Balance from '../components/Balance';
 
-
 import transactionsService from "../services/transactions.service";
-
 
 function TransactionDetailsPage() {
   const [transaction, setTransaction] = useState({});
@@ -19,7 +17,6 @@ function TransactionDetailsPage() {
       .catch((error) => console.log(error));
   }, [id]);
 
-
   return (
     <div>
       <Balance/>
@@ -27,13 +24,14 @@ function TransactionDetailsPage() {
         <div>
           <Link to="/">Return to Home Page</Link>
           <h3>{transaction.text}</h3>
-          <p>{transaction.amount}</p>
-          <p>{transaction.date}</p>
           <p>{transaction.type}</p>
-          <p>{transaction.description}</p>
           <p>{transaction.category}</p>
+          <p>{transaction.description}</p>
+          <p>{transaction.amount} €</p>
+          <p>{transaction.date}</p>
           <div className="receipt" >
-            <img src={transaction.img} alt="picture of receipt"/>
+            <img  className="receipt-img" src={transaction.receipt} alt="picture of receipt"
+            style={{ display: transaction.receipt ? 'inline-block' : 'none' }}/>
           </div>
           <Link to="/transactions">Back</Link>
         </div>
