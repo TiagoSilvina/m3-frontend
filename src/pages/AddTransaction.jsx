@@ -1,8 +1,6 @@
 /* Import React / React-Router-Dom Features  */
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
-
 import transactionsService from "../services/transactions.service";
 
 function AddTransactionPage() {

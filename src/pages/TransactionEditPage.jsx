@@ -4,7 +4,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
 
 import Balance from '../components/Balance';
-
 import transactionsService from "../services/transactions.service";
 
 function TransactionEditPage() {

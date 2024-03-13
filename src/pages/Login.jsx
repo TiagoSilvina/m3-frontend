@@ -1,7 +1,6 @@
 /* Import React / React-Router-Dom Features  */
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
 
 /* Import Context */
 import { AuthContext } from "../context/auth.context";
@@ -34,6 +33,7 @@ function Login() {
         console.log(error);
       });
   };
+
 
   return (
     <div>
@@ -70,13 +70,11 @@ function Login() {
           />
         </div>
         <div>
-          <button className="btn" type="submit">Login</button>
-          <p>Don't have an account yet?</p>
-          <Link to={"/signup"}> Sign Up</Link>
+        <button className="btn" type="submit">Login</button>
         </div>
       </form>
     </div>
   );
-}
+};
 
 export default Login;
