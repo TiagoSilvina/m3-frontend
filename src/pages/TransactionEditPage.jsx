@@ -73,7 +73,6 @@ const handleDelete = () => {
 
   return(
     <div>
-      <Link to="/">Return to Home Page</Link>
       <Balance/>
       <h3>Edit transaction</h3>
       <form onSubmit={handleSubmit}>
