@@ -73,11 +73,12 @@ const handleDelete = () => {
 
   return(
     <div>
+      <Link to="/">Return to Home Page</Link>
       <Balance/>
       <h3>Edit transaction</h3>
       <form onSubmit={handleSubmit}>
 
-        <div className="input input-bordered flex items-center gap-2">
+        <div className="form-control">
         <label>name</label>
         <input
         value={text}
@@ -89,43 +90,33 @@ const handleDelete = () => {
         />
         </div>
 
-
-
         <div className="form-control">
-        <label className="label cursor-pointer">
-        <span className="label-text">Expense</span>
+        <label>Expense</label>
         <input 
-        className="radio checked:bg-red-500" checked
         value="expense"
         name="type" 
         type="radio" 
         onChange={(e) => setType(e.target.value)}
         ></input>
-        </label>
-        </div>
-        <div className="form-control">
-        <label className="label cursor-pointer">
-        <span className="label-text">Income</span> 
+        <label>Income</label>
         <input 
-        className="radio checked:bg-green-500" checked
         value="income"
         name="type" 
         type="radio" 
         onChange={(e) => setType(e.target.value)}
         ></input>
-        </label>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="form-control">
         {type === "expense" && (
         <label>
         Category:
-        <select className="select select-bordered w-full max-w-xs"
+        <select 
         value={category}
         name="category"
         type="text"
         onChange={(e) => setCategory(e.target.value)} >
-        <option disabled selected value="">----</option>
+        <option value="">----</option>
         <option value="Other">Other</option>
         <option value="Debt Payments">Debt Payments</option>
         <option value="Education">Education</option>
@@ -140,16 +131,16 @@ const handleDelete = () => {
         )}
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="form-control">
         {type === "income" && (
         <label>
         Category:
-        <select className="select select-bordered w-full max-w-xs"
+        <select 
         value={category}
         name="category"
         type="text"
         onChange={(e) => setCategory(e.target.value)}>
-        <option disabled selected value="">----</option>
+        <option value="">----</option>
         <option value="Paycheck" >Paycheck</option>
         <option value="Investments">Investments</option>
         <option value="Other">Other</option>
@@ -157,17 +148,18 @@ const handleDelete = () => {
         </label>)}
         </div>
 
-        <div className="input input-bordered flex items-center gap-2">
+        <div className="form-control">
         <label>Description</label>
         <input
         value={description}
         name="description"
         type="text"
         placeholder="Enter description..."
-        onChange={(e) => setDescription(e.target.value)}/>
+        onChange={(e) => setDescription(e.target.value)}
+        />
         </div>
 
-        <div className="input input-bordered flex items-center gap-2">
+        <div className="form-control">
         <label>Amount (- for expenses)</label>
         <input
         value={amount}
@@ -179,7 +171,7 @@ const handleDelete = () => {
         />
         </div>
 
-       {/*  <div className="input input-bordered flex items-center gap-2">
+        <div className="form-control">
         <label>Date</label>
         <input
         value={date}
@@ -188,8 +180,8 @@ const handleDelete = () => {
         onChange={(e) => setDate(e.target.value)}
         />
         </div>
- */}
-        <div className="input input-bordered flex items-center gap-2">
+
+        <div className="form-control">
       <label>Add Receipt</label>
       <input
       value={receipt}
@@ -200,11 +192,11 @@ const handleDelete = () => {
       />
       </div>
 
-        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Edit transaction</button>
+        <button className="btn">Edit transaction</button>
       </form>
-        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
+        <button className="btn"
         onClick={handleDelete} >Delete Transaction</button>
-        <Link className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" to="/transactions">Back</Link>
+        <Link className="btn" to="/transactions">Back</Link>
 
     </div>
   )
