@@ -68,13 +68,12 @@ height: 15vh;
   align-items: center;
   justify-content: center;
 }
-.profilePic{
+.profilePic img{
   border-radius: 50%;
   border: 3px solid black;
   margin: 10px;
   height:15vh;
   width: auto;
- 
 } 
 /* Money //////////////////////////////////////////////////*/
 .inc-exp-container {
