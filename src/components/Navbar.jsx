@@ -33,16 +33,16 @@ function Navbar() {
     {!isLoggedIn && (<Link to="/signup">Signup</Link>)}
     {!isLoggedIn &&/*  location.pathname !== "/login" &&  */
     ((<Link to="/login">Login</Link>))}
-      {isLoggedIn && (
-        <button className="btn" onClick={logOut}>Log Out</button>
-        )}
     </div>
-{/*     <div  className="nav-profile">
-      {{isLoggedIn && (<h4> Hi {user.name}</h4>)}}
+    <div  className="nav-profile">
+      {/* {isLoggedIn && (<h4> Hi {user.name}</h4>)} */}
       {isLoggedIn && (<img className="profilePic"
        src={isLoggedIn ? user.img : "https://www.tenforums.com/geek/gars/images/2/types/thumb_15951118880user.png"}/>
        )}
-    </div> */}
+       {isLoggedIn && (
+         <button className="btn" onClick={logOut}>Log Out</button>
+         )}
+    </div>
     </div>
   )
 }

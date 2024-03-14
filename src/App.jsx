@@ -20,8 +20,7 @@ function App() {
   return (
     <div>
       <Navbar />
-      <main>
-      <Routes>
+    <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/signup" element={<IsAnon><Signup /></IsAnon>}/>
@@ -32,7 +31,6 @@ function App() {
         <Route path="/add-transaction" element={<IsPrivate><AddTransactionPage /></IsPrivate>} />
         <Route path="*" element={<IsAnon><Error /></IsAnon>} />
       </Routes>
-      </main>
       </div>
   )
 }
