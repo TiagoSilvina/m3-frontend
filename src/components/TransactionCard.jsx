@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import transactionsService from "../services/transactions.service";
 /* import { AuthContext } from "../context/auth.context"; */
 
+import 'tailwindcss/tailwind.css'; // Import Tailwind CSS styles
+import 'daisyui/dist/full.css'; // Import DaisyUI styles
+
 function TransactionCard() {
     const [transactions, setTransactions] = useState([]);
     useEffect(() => {

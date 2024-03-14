@@ -35,7 +35,7 @@ function Navbar() {
     ((<Link to="/login">Login</Link>))}
     </div>
     <div  className="nav-profile">
-      {isLoggedIn && (<h4> Hi {user.name}</h4>)}
+      {/* {isLoggedIn && (<h4> Hi {user.name}</h4>)} */}
       {isLoggedIn && (<img className="profilePic"
        src={isLoggedIn ? user.img : "https://www.tenforums.com/geek/gars/images/2/types/thumb_15951118880user.png"}/>
        )}
