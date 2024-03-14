@@ -18,9 +18,12 @@ function TransactionCard() {
     };
    
   return (
-    <div> 
+    <div>
       {transactions &&
-        transactions.map((transaction) => {
+      transactions
+        .slice()
+        .sort((a, b) => new Date(b.date) - new Date(a.date))
+        .map((transaction) => {
           return (
             <div key={transaction._id} className="transaction-card">
               <Link to={`/transactions/${transaction._id}`}>

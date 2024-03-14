@@ -28,7 +28,7 @@ function Navbar() {
     <div className="navbar">
 
     <div className="nav-links">
-    <Link to="/">Home</Link>
+    {!isLoggedIn && (<Link to="/">Home</Link>)}
     <Link to="/transactions">Transactions</Link>
     {!isLoggedIn && (<Link to="/signup">Signup</Link>)}
     {!isLoggedIn &&/*  location.pathname !== "/login" &&  */

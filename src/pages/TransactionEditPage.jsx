@@ -195,7 +195,9 @@ const handleDelete = () => {
         <button className="btn">Edit transaction</button>
       </form>
         <button className="btn"
-        onClick={handleDelete} >x</button>
+        onClick={handleDelete} >Delete Transaction</button>
+        <Link className="btn" to="/transactions">Back</Link>
+
     </div>
   )
 }
