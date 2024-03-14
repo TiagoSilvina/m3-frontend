@@ -6,7 +6,7 @@ import transactionsService from "../services/transactions.service";
 // Initializing Context
 const AuthContext = React.createContext();
 
-const API_URL = "http://localhost:5005";
+const API_URL = "https://m3-backend.onrender.com/";
 
 function AuthProviderWrapper(props) {
  /* Original
