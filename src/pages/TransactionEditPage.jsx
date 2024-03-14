@@ -179,7 +179,7 @@ const handleDelete = () => {
         />
         </div>
 
-      {/*   <div className="input input-bordered flex items-center gap-2">
+        <div className="input input-bordered flex items-center gap-2">
         <label>Date</label>
         <input
         value={date}
@@ -187,7 +187,7 @@ const handleDelete = () => {
         type="date"
         onChange={(e) => setDate(e.target.value)}
         />
-        </div> */}
+        </div>
 
         <div className="input input-bordered flex items-center gap-2">
       <label>Add Receipt</label>
