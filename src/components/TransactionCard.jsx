@@ -35,7 +35,7 @@ function TransactionCard() {
                 <p>{transaction.category}</p>
                 {/* <p>{transaction.description}</p> */}
                 <p className={transaction.amount >0 ? "money-plus": "money-minus"}> {transaction.amount} €</p>
-                <p>{formatDate(transaction.date)}</p>
+                {/* <p>{formatDate(transaction.date)}</p> */}
                 {/* <img src={switch (transaction.)}/> */}
                 </div>
               </Link>
