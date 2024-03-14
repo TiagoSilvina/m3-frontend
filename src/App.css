@@ -27,12 +27,12 @@ a {
   text-decoration: none;
   text-transform: none;
 }
-/* .container {
+ .container {
   margin: 30px auto;
   width: 400px;
 }
- */
-/* h1 {
+
+ h1 {
   letter-spacing: 1px;
   margin: 0;
 }
@@ -46,27 +46,26 @@ h3 {
 h4 {
   margin: 0;
   text-transform: uppercase;
-} */
+} 
 
 /* Navbar //////////////////////////////////////////////////*/
 .navbar{
 display: flex;;
 justify-content: space-between;
-width: 100%;
+/* width: 100%; */
 }
 .nav-links{
-  width: 50%;
+  width: 70%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 .nav-profile{
+  width: 30%;
   display: flex;
   align-items: center;
 }
 .profilePic{
-  height: 100px;
-  width: 100px;
   border-radius: 50%;
   border: 3px solid black;
 }
@@ -83,14 +82,6 @@ width: 100%;
   flex: 1;
   text-align: center;
 }
-/* .inc-exp-container > div:first-of-type {
-  border-right: 1px solid #050303;
-} */
-/* .money {
-  font-size: 20px;
-  letter-spacing: 1px;
-  margin: 5px 0;
-} */
 .money-plus {
   font-size: 20px;
   letter-spacing: 1px;
