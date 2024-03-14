@@ -39,9 +39,11 @@ function TransactionCard() {
                 {/* <img src={switch (transaction.)}/> */}
                 </div>
               </Link>
+              <div className="edit-btn">
               <Link to={`/edit-transaction/${transaction._id}`}>
               <p className="btn">Edit transaction</p>
               </Link>
+              </div>
             </div>
           );
         })}
