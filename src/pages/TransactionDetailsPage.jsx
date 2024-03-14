@@ -33,7 +33,7 @@ function TransactionDetailsPage() {
           <p>{transaction.description}</p>
           <p className={transaction.amount >0 ? "money-plus": "money-minus"}>{transaction.amount} €</p>
           <p>{formatDate(transaction.date)}</p>
-          <Link className="btn" to="/transactions">Back</Link>
+          <Link className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" to="/transactions">Back</Link>
           <div className="receipt" >
             <img  className="receipt-img" src={transaction.receipt} alt="picture of receipt"
             style={{ display: transaction.receipt ? 'inline-block' : 'none' }}/>

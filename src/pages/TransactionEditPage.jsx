@@ -77,7 +77,7 @@ const handleDelete = () => {
       <h3>Edit transaction</h3>
       <form onSubmit={handleSubmit}>
 
-        <div className="form-control">
+        <div className="input input-bordered flex items-center gap-2">
         <label>name</label>
         <input
         value={text}
@@ -89,33 +89,43 @@ const handleDelete = () => {
         />
         </div>
 
+
+
         <div className="form-control">
-        <label>Expense</label>
+        <label className="label cursor-pointer">
+        <span className="label-text">Expense</span>
         <input 
+        className="radio checked:bg-red-500" checked
         value="expense"
         name="type" 
         type="radio" 
         onChange={(e) => setType(e.target.value)}
         ></input>
-        <label>Income</label>
+        </label>
+        </div>
+        <div className="form-control">
+        <label className="label cursor-pointer">
+        <span className="label-text">Income</span> 
         <input 
+        className="radio checked:bg-green-500" checked
         value="income"
         name="type" 
         type="radio" 
         onChange={(e) => setType(e.target.value)}
         ></input>
+        </label>
         </div>
 
-        <div className="form-control">
+        <div className="flex items-center gap-2">
         {type === "expense" && (
         <label>
         Category:
-        <select 
+        <select className="select select-bordered w-full max-w-xs"
         value={category}
         name="category"
         type="text"
         onChange={(e) => setCategory(e.target.value)} >
-        <option value="">----</option>
+        <option disabled selected value="">----</option>
         <option value="Other">Other</option>
         <option value="Debt Payments">Debt Payments</option>
         <option value="Education">Education</option>
@@ -130,16 +140,16 @@ const handleDelete = () => {
         )}
         </div>
 
-        <div className="form-control">
+        <div className="flex items-center gap-2">
         {type === "income" && (
         <label>
         Category:
-        <select 
+        <select className="select select-bordered w-full max-w-xs"
         value={category}
         name="category"
         type="text"
         onChange={(e) => setCategory(e.target.value)}>
-        <option value="">----</option>
+        <option disabled selected value="">----</option>
         <option value="Paycheck" >Paycheck</option>
         <option value="Investments">Investments</option>
         <option value="Other">Other</option>
@@ -147,18 +157,17 @@ const handleDelete = () => {
         </label>)}
         </div>
 
-        <div className="form-control">
+        <div className="input input-bordered flex items-center gap-2">
         <label>Description</label>
         <input
         value={description}
         name="description"
         type="text"
         placeholder="Enter description..."
-        onChange={(e) => setDescription(e.target.value)}
-        />
+        onChange={(e) => setDescription(e.target.value)}/>
         </div>
 
-        <div className="form-control">
+        <div className="input input-bordered flex items-center gap-2">
         <label>Amount (- for expenses)</label>
         <input
         value={amount}
@@ -170,7 +179,7 @@ const handleDelete = () => {
         />
         </div>
 
-        <div className="form-control">
+        <div className="input input-bordered flex items-center gap-2">
         <label>Date</label>
         <input
         value={date}
@@ -180,7 +189,7 @@ const handleDelete = () => {
         />
         </div>
 
-        <div className="form-control">
+        <div className="input input-bordered flex items-center gap-2">
       <label>Add Receipt</label>
       <input
       value={receipt}
@@ -191,11 +200,11 @@ const handleDelete = () => {
       />
       </div>
 
-        <button className="btn">Edit transaction</button>
+        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Edit transaction</button>
       </form>
-        <button className="btn"
+        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
         onClick={handleDelete} >Delete Transaction</button>
-        <Link className="btn" to="/transactions">Back</Link>
+        <Link className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" to="/transactions">Back</Link>
 
     </div>
   )
