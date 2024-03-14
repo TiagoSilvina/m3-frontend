@@ -62,7 +62,7 @@ height: 15vh;
   justify-content: space-around;
 }
 .nav-profile{
-  height:150px;
+  height:15vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,6 +72,8 @@ height: 15vh;
   border-radius: 50%;
   border: 3px solid black;
   margin: 10px;
+  height:15vh;
+  width: auto;
  
 } 
 /* Money //////////////////////////////////////////////////*/
