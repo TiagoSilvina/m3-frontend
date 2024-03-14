@@ -1,6 +1,5 @@
 import { useEffect, useState, useContext } from "react";
 import transactionsService from "../services/transactions.service";
-import IncomeExpenses from "./IncomeExpenses";
 
 function Balance() {
     const [transactions, setTransactions] = useState([]);
