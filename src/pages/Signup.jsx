@@ -33,7 +33,7 @@ function Signup() {
 
   return (
     <div>
-      <h1>Sign-up Page</h1>
+      <h1>Sign-up</h1>
       <form onSubmit={handleSignUpSubmit}>
         <div className="form-control">
           <label>Email:</label>

@@ -13,14 +13,11 @@ function Login() {
   const [password, setPassword] = useState("");
   const [img, setImg] = useState("");
   const { saveToken, authenticateUser } = useContext(AuthContext);
-
   const navigate = useNavigate();
-
   const { login } = authService;
 
   const handleLoginSubmit = (e) => {
     e.preventDefault();
-
     const reqBody = { email, password, img };
 
     login(reqBody)
@@ -34,10 +31,9 @@ function Login() {
       });
   };
 
-
   return (
     <div>
-      <h1>Login Page</h1>
+      <h1>Login</h1>
       <form onSubmit={handleLoginSubmit}>
         <div className="form-control">
           <label>Email:</label>

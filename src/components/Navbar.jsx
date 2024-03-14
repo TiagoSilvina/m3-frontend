@@ -4,8 +4,7 @@ import { AuthContext } from "../context/auth.context";
 
 function Navbar() {
 
-  const{user} = useContext(AuthContext);
-  const { isLoggedIn, logOut } = useContext(AuthContext);
+  const { isLoggedIn, logOut, user } = useContext(AuthContext);
 
   /* const getCurrentLinkText = (pathname) => {
     const routes = {

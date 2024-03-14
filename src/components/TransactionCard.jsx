@@ -12,23 +12,28 @@ function TransactionCard() {
         .catch((error) => console.log(error));
     }, []);
 
-
-    /* const{transactions} = useContext(AuthContext) */ 
-
+    const formatDate = (dateString) => {
+      const date = new Date(dateString);
+      return date.toLocaleDateString();
+    };
+   
   return (
     <div> 
       {transactions &&
         transactions.map((transaction) => {
           return (
-            <div key={transaction._id} >
+            <div key={transaction._id} className="transaction-card">
               <Link to={`/transactions/${transaction._id}`}>
+                <div>
                 <h3>{transaction.text}</h3>
                 <p>{transaction.description}</p>
-                <p>{transaction.amount} €</p>
-                <p>{transaction.date}</p>
+                <p className={transaction.amount >0 ? "money-plus": "money-minus"}> {transaction.amount} €</p>
+                <p>{formatDate(transaction.date)}</p>
+                {/* <img src={switch (transaction.)}/> */}
+                </div>
               </Link>
               <Link to={`/edit-transaction/${transaction._id}`}>
-                <p>Edit transaction</p>
+              <p className="btn">Edit transaction</p>
               </Link>
             </div>
           );

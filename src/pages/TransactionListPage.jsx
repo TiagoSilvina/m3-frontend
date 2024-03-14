@@ -11,8 +11,8 @@ function TransactionListPage() {
     <div>
     {/* <Graph /> */}
     <Balance/>
-            <Link className="add-button" to="/add-transaction">
-            <h1>Add Transaction</h1>
+            <Link to="/add-transaction">
+            <h1 className="btn">Add Transaction</h1>
             </Link>
             <TransactionCard/>
     </div>

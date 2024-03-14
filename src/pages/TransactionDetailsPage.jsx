@@ -9,6 +9,11 @@ function TransactionDetailsPage() {
   const [transaction, setTransaction] = useState({});
   const { id } = useParams();
 
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString();
+  };
+
   const { getTransaction } = transactionsService;
   
   useEffect(() => {
@@ -22,18 +27,17 @@ function TransactionDetailsPage() {
       <Balance/>
         {transaction && (
         <div>
-          <Link to="/">Return to Home Page</Link>
           <h3>{transaction.text}</h3>
           <p>{transaction.type}</p>
           <p>{transaction.category}</p>
           <p>{transaction.description}</p>
-          <p>{transaction.amount} €</p>
-          <p>{transaction.date}</p>
+          <p className={transaction.amount >0 ? "money-plus": "money-minus"}>{transaction.amount} €</p>
+          <p>{formatDate(transaction.date)}</p>
           <div className="receipt" >
             <img  className="receipt-img" src={transaction.receipt} alt="picture of receipt"
             style={{ display: transaction.receipt ? 'inline-block' : 'none' }}/>
           </div>
-          <Link to="/transactions">Back</Link>
+          <Link className="btn" to="/transactions">Back</Link>
         </div>
       )}
     </div>
