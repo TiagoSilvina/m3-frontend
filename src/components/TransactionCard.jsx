@@ -32,18 +32,15 @@ function TransactionCard() {
               <Link to={`/transactions/${transaction._id}`}>
                 <div>
                 <h3>{transaction.text}</h3>
-                <p>{transaction.category}</p>
                 <p>{transaction.description}</p>
                 <p className={transaction.amount >0 ? "money-plus": "money-minus"}> {transaction.amount} €</p>
                 <p>{formatDate(transaction.date)}</p>
                 {/* <img src={switch (transaction.)}/> */}
                 </div>
               </Link>
-              <div className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">
               <Link to={`/edit-transaction/${transaction._id}`}>
-              <p className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Edit transaction</p>
+              <p className="btn">Edit transaction</p>
               </Link>
-              </div>
             </div>
           );
         })}
