@@ -10,7 +10,7 @@ function Navbar() {
 
   return (
 
-    <div class="navbar bg-base-100">
+  <div class="navbar bg-base-100">
   <div class="navbar-start">
     <div class="dropdown">
       <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
@@ -35,7 +35,7 @@ function Navbar() {
         <li>{!isLoggedIn && (<Link to="/signup">Signup</Link>)}</li>
         <li>{!isLoggedIn && (<Link to="/login">Login</Link>)}</li>
         <li>{isLoggedIn && (
-         <button className="btn" onClick={logOut}>Log Out</button>
+         <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" onClick={logOut}>Log Out</button>
          )}</li>
       </ul>
     </div>
