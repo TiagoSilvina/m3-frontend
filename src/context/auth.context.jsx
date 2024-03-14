@@ -7,6 +7,7 @@ import transactionsService from "../services/transactions.service";
 const AuthContext = React.createContext();
 
 const API_URL = "https://m3-backend.onrender.com";
+/* const API_URL = "http://localhost:5005"; */
 
 function AuthProviderWrapper(props) {
  /* Original
@@ -39,7 +40,8 @@ function AuthProviderWrapper(props) {
         })
         .catch((error) => {
           if (error) {
-            setAuthError(error.response.data.message);
+            /* setAuthError(error.response.data.message); */
+            console.log(error)
             return;
           }
           // If the server sends an error response (invalid token)

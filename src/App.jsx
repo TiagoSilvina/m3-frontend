@@ -10,6 +10,7 @@ import TransactionListPage from './pages/TransactionListPage';
 import TransactionDetailsPage from './pages/TransactionDetailsPage';
 import TransactionEditPage from './pages/TransactionEditPage';
 import AddTransactionPage from './pages/AddTransaction';
+import About from './pages/About';
 import Navbar from './components/Navbar';
 
 import IsPrivate from "./components/IsPrivate";
@@ -21,6 +22,7 @@ function App() {
       <Navbar />
     <Routes>
         <Route path="/" element={<Home/>}/>
+        <Route path="/about" element={<About/>}/>
         <Route path="/signup" element={<IsAnon><Signup /></IsAnon>}/>
         <Route path="/login" element={<IsAnon><Login /></IsAnon>}/>
         <Route path="/transactions" element={<IsPrivate><TransactionListPage /></IsPrivate>} />
