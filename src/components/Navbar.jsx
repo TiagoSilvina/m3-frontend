@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom"
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context"; 
+import 'tailwindcss/tailwind.css'; // Import Tailwind CSS styles
+import 'daisyui/dist/full.css'; // Import DaisyUI styles
 
 function Navbar() {
 
