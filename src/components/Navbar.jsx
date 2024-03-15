@@ -15,10 +15,12 @@ function Navbar() {
       </div>
       <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
       <li><Link to="/about">About</Link></li>
+      {!isLoggedIn && (<li><Link to="/signup">Signup</Link></li>)}
+      {!isLoggedIn && (<li><Link to="/login">Login</Link></li>)}
       </ul>
     </div>
     <div className="navbar-center">
-    {!isLoggedIn && (<Link className="btn btn-ghost text-xl" to="/transactions">Transactions</Link>)}
+    {isLoggedIn && (<Link className="btn btn-ghost text-xl" to="/transactions">Transactions</Link>)}
   </div>
     <div className="dropdown dropdown-end">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
@@ -27,8 +29,6 @@ function Navbar() {
         </div>
       </div>
       <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-      {!isLoggedIn && (<li><Link to="/signup">Signup</Link></li>)}
-        {!isLoggedIn && (<li><Link to="/login">Login</Link></li>)}
         {isLoggedIn && ( <li><button onClick={logOut}>Log Out</button></li>)}
       </ul>
     </div>
