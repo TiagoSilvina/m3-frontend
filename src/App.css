@@ -30,12 +30,12 @@ a {
   text-decoration: none;
   text-transform: none;
 }
-/* .container {
+.container {
   margin: 30px auto;
   width: 400px;
 }
- */
-/* h1 {
+
+h1 {
   letter-spacing: 1px;
   margin: 0;
 }
@@ -49,7 +49,7 @@ h3 {
 h4 {
   margin: 0;
   text-transform: uppercase;
-} */
+}
 
 /* Navbar //////////////////////////////////////////////////*/
 .navbar{
@@ -73,19 +73,8 @@ width: 100%;
   border-radius: 50%;
   border: 3px solid black;
 }
-.nav-btn{
-  cursor: pointer;
-  background-color: #9c88ff;
-  box-shadow: var(--box-shadow);
-  color: #fff;
-  border: 0;
-  display: block;
-  font-size: 16px;
-  margin: 10px 0 30px;
-  padding: 10px;
-  width: 20px;
-  text-align: center;
-}
+
+
 /* Money //////////////////////////////////////////////////*/
 .inc-exp-container {
   background-color: #fff;
