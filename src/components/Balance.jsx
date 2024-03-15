@@ -25,7 +25,6 @@ function Balance() {
     ); 
 
   let color = total > 0 ? "money-plus" : "money-minus"
-  let sign = total >0 ?  " " : "-"
 
   return (
     <div>
@@ -40,7 +39,7 @@ function Balance() {
         </div>
         <div>
         <h4>Balance</h4>
-        <p className={color}>{sign}{total}€</p>
+        <p className={color}>{total}€</p>
         </div>
       </div>
     </div>
