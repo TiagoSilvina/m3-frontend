@@ -10,7 +10,8 @@
 
 * {
   box-sizing: border-box;
-  margin: 0px 50px ;
+  padding: 0px 30px;
+  margin: 0px 100px ;
 }
 
 /* .app {
@@ -53,11 +54,6 @@ h4 {
 
 /* Navbar //////////////////////////////////////////////////*/
 
-.navbar-end {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
 /* .navbar{
 display: flex;;
 justify-content: space-between;
