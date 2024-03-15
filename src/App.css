@@ -10,6 +10,7 @@
 
 * {
   box-sizing: border-box;
+  margin: 0px 50px ;
 }
 
 /* .app {
@@ -51,6 +52,12 @@ h4 {
 }  */
 
 /* Navbar //////////////////////////////////////////////////*/
+
+.navbar-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
 /* .navbar{
 display: flex;;
 justify-content: space-between;
