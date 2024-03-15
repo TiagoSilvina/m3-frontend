@@ -9,7 +9,7 @@ function Navbar() {
   const { isLoggedIn, logOut, user } = useContext(AuthContext);
 
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
