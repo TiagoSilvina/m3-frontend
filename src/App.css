@@ -15,14 +15,14 @@
 body {
   background-color: #f7f7f7;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  /* flex-direction: column; 
+  align-items: center; */
   justify-content: center;
   min-height: 100vh; 
-  margin: 0;
+  margin: 0px 100px;
   font-family: 'Lato', sans-serif;
   font-size: 18px;
-  width: 100vh;
+ /*  width: 100vh; */
 }
 a {
   text-decoration: none;
