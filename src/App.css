@@ -17,14 +17,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   min-height: 100vh; 
   margin: 0;
   font-family: 'Lato', sans-serif;
   font-size: 18px;
-/*   width: 100vh; */
+  width: 100vh; 
 }
-a {
+/* a {
   text-decoration: none;
   text-transform: none;
 }
@@ -47,7 +47,7 @@ h3 {
 h4 {
   margin: 0;
   text-transform: uppercase;
-} 
+}  */
 
 /* Navbar //////////////////////////////////////////////////*/
 /* .navbar{
