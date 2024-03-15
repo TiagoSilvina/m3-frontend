@@ -29,7 +29,7 @@ function TransactionCard() {
         .map((transaction) => {
           return (
             <div key={transaction._id} className="transaction-card">
-              
+              <Link to={`/transactions/${transaction._id}`}>
                 <div>
                 <h3>{transaction.text}</h3>
                 <p>{transaction.description}</p>
@@ -37,12 +37,10 @@ function TransactionCard() {
                 <p>{formatDate(transaction.date)}</p>
                 {/* <img src={switch (transaction.)}/> */}
                 </div>
-              
+              </Link>
               <Link to={`/edit-transaction/${transaction._id}`}>
               <p className="btn">Edit transaction</p>
               </Link>
-              <Link to={`/transactions/${transaction._id}`}>
-              <p className="btn">Edit transaction</p></Link>
             </div>
           );
         })}
