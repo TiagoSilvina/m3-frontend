@@ -50,20 +50,20 @@ function AddTransactionPage() {
       </div>
 
       <div className="form-control">
-     {/*  <label>Expense</label> */}
+     <label>Expense</label>
       <input 
       value="Expense"
       name="type" 
       type="radio" 
       onChange={(e) => setType(e.target.value)}
-      >Expense</input>
-      {/* <label>Income</label> */}
+      ></input>
+      <label>Income</label> 
       <input 
       value="Income"
       name="type" 
       type="radio" 
       onChange={(e) => setType(e.target.value)}
-      >Income</input>
+      ></input>
       </div>
 
       <div className="form-control">
