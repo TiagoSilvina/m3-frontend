@@ -18,7 +18,7 @@ function About() {
             <div className="developer-card">
                 <img className="profile-pic" src="/assets/img/defaultProfile.png"/>
                 <h1 className="dev-name">JOÃO GONÇALVES</h1>
-                <a className="dev-link" href="https://www.linkedin.com/in/joao-gon%C3%A7alves-807800196/">LinkedIn</a>
+                <a className="dev-link" href="https://www.linkedin.com/in/jo%C3%A3o-gon%C3%A7alves-807800196/">LinkedIn</a>
                 <a className="dev-link" href="https://github.com/JoaoGoncalves25">GitHub</a>
             </div>
             </div>
