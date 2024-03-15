@@ -16,12 +16,13 @@ body {
   background-color: #f7f7f7;
   display: flex;
   /* flex-direction: column; 
-  align-items: center; */
-  justify-content: center;
+  align-items: center; 
+  justify-content: center;*/
   min-height: 100vh; 
   margin: 0px 100px;
   font-family: 'Lato', sans-serif;
   font-size: 18px;
+  min-width: 375px;
  /*  width: 100vh; */
 }
 a {
