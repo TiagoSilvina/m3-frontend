@@ -8,7 +8,7 @@ function Navbar() {
   const { isLoggedIn, logOut, user } = useContext(AuthContext);
 
   return (
-    <div className="navbar bg-base-100">
+/*     <div className="navbar bg-base-100">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
@@ -35,28 +35,30 @@ function Navbar() {
       </ul>
     </div>
   </div>
-)
+) */
 
 
 
 
-    {/* <div className="navbar">
+   <div className="navbar">
+    
     <div  className="nav-profile">
-      {isLoggedIn && (<h4> Hi {user.name}</h4>)}
-       {isLoggedIn && (<img className="profilePic"
+      {isLoggedIn && (<img className="profilePic"
        src={isLoggedIn ? user.img : "https://www.tenforums.com/geek/gars/images/2/types/thumb_15951118880user.png"}/>
        )} 
+      {isLoggedIn && (<h4> Hi {user.name}</h4>)}
     </div>
+
     <div className="nav-links">
-    {!isLoggedIn && (<Link to="/">Home</Link>)}
-    <Link to="/transactions">Transactions</Link>
+    {isLoggedIn && (<Link to="/transactions">Transactions</Link>)}
     {!isLoggedIn && (<Link to="/signup">Signup</Link>)}
     {!isLoggedIn && (<Link to="/login">Login</Link>)}
       {isLoggedIn && (
-        <button className="btn" onClick={logOut}>Log Out</button>
-        )}
+        <button className="btn" onClick={logOut}>Log Out</button>)}
     </div>
-    </div> */}
+
+    </div> 
+  )
   
 }
 
