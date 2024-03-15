@@ -5,24 +5,24 @@
 
  :root {
   --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
+ }
 
 * {
     margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  
+  display: flex;
   justify-content: center;
- 
+  align-items: center;
 }
 
 .app{
   min-width: 480px;
-  max-width: 1000px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 20px 50px;
 }
 /*body {
   background-color: #f7f7f7;
