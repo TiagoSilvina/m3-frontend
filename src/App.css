@@ -50,7 +50,7 @@ h4 {
 } 
 
 /* Navbar //////////////////////////////////////////////////*/
-.navbar{
+/* .navbar{
 display: flex;;
 justify-content: space-between;
 height: 15vh;
@@ -81,7 +81,7 @@ height: 15vh;
   margin: 10px;
   height:40px;
   width: 40px;
-} 
+}  */
 /* Money //////////////////////////////////////////////////*/
 .inc-exp-container {
   background-color: #fff;
