@@ -22,7 +22,7 @@ function Navbar() {
     <div className="navbar-center">
     {isLoggedIn && (<Link className="btn btn-ghost text-xl" to="/transactions">Transactions</Link>)}
   </div>
-    <div className="dropdown dropdown-end">
+    <div className="navbar-end dropdown dropdown-end">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
         {isLoggedIn && (<img src={isLoggedIn ? user.img : "https://www.tenforums.com/geek/gars/images/2/types/thumb_15951118880user.png"} />)} 

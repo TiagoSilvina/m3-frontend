@@ -18,7 +18,7 @@ import IsAnon from "./components/IsAnon";
 
 function App() {
   return (
-    <div className='app'>
+    <div>
       <Navbar />
     <Routes>
         <Route path="/" element={<Home/>}/>
