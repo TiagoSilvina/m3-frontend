@@ -46,15 +46,15 @@ function Navbar() {
       {isLoggedIn && (<img className="profilePic"
        src={isLoggedIn ? user.img : "https://www.tenforums.com/geek/gars/images/2/types/thumb_15951118880user.png"}/>
        )} 
-      {isLoggedIn && (<h4> Hi {user.name}</h4>)}
+      {isLoggedIn && (<p>{user.name}</p>)}
     </div>
 
     <div className="nav-links">
-    {isLoggedIn && (<Link to="/transactions">Transactions</Link>)}
-    {!isLoggedIn && (<Link to="/signup">Signup</Link>)}
-    {!isLoggedIn && (<Link to="/login">Login</Link>)}
+    {isLoggedIn && (<Link className="nav-btn" to="/transactions">Transactions</Link>)}
+    {!isLoggedIn && (<Link className="nav-btn" to="/signup">Signup</Link>)}
+    {!isLoggedIn && (<Link className="nav-btn" to="/login">Login</Link>)}
       {isLoggedIn && (
-        <button className="btn" onClick={logOut}>Log Out</button>)}
+        <button className="nav-btn" onClick={logOut}>Log Out</button>)}
     </div>
 
     </div> 
