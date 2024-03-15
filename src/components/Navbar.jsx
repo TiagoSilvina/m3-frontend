@@ -50,6 +50,7 @@ function Navbar() {
     </div>
 
     <div className="nav-links">
+    <Link to="/about">About</Link>)
     {isLoggedIn && (<Link to="/transactions">Transactions</Link>)}
     {!isLoggedIn && (<Link to="/signup">Signup</Link>)}
     {!isLoggedIn && (<Link to="/login">Login</Link>)}
