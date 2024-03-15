@@ -25,21 +25,22 @@ function Balance() {
     ); 
 
   let color = total > 0 ? "money-plus" : "money-minus"
+  let sign = total >0 ?  "+" : "-"
 
   return (
     <div>
         <div className="inc-exp-container">
         <div>
         <h4>Expense</h4>
-        <p className="money-minus">{expense}€</p>
+        <p className="money-minus">${sign}{expense}€</p>
         </div>
         <div>
         <h4>Income</h4>
-        <p className="money-plus">{income}€</p>
+        <p className="money-plus">${sign}{income}€</p>
         </div>
         <div>
         <h4>Balance</h4>
-        <p className={color}>{total}€</p>
+        <p className={color}>${sign}{total}€</p>
         </div>
       </div>
     </div>
