@@ -1,5 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import transactionsService from "../services/transactions.service";
+import { Link } from "react-router-dom";
+
 
 function Balance() {
     const [transactions, setTransactions] = useState([]);
@@ -24,25 +26,31 @@ function Balance() {
       -1
     ); 
 
-  let color = total > 0 ? "money-plus" : "money-minus"
+  let color = total > 0 ? "positive" : "negative"
 
   return (
-    <div>
-        <div className="inc-exp-container">
-        <div>
+        <div className="balance">
+          <div className="balance-data">
+        <div className="balance-container">
         <h4>Expense</h4>
-        <p className="money-minus">-{expense}€</p>
+        <p className="negative">-{expense}€</p>
         </div>
-        <div>
+        <div className="balance-container">
         <h4>Income</h4>
-        <p className="money-plus">{income}€</p>
+        <p className="positive">{income}€</p>
         </div>
-        <div>
+        <div className="balance-container">
         <h4>Balance</h4>
         <p className={color}>{total}€</p>
         </div>
+        </div>
+        <div className="add-transaction">
+            <Link className="balance-btn" to="/add-transaction">
+            Add Transaction
+            </Link>
+        </div>
       </div>
-    </div>
+ 
   )
 }
 

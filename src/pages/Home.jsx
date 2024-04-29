@@ -1,14 +1,11 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-
 function Home() {
   return (
-    <div>
-    <Link className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" to="/signup">Sign Up</Link>
-    <br></br>
-    <Link className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" to="/login">Login</Link>
-    <br></br>
-    <Link className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" to="/login">About Us</Link>
+    <div className='homepage'>
+      <div className="home-container">
+      <h1 className="title">Expense Tracker</h1>
+      <p className="description">Made using the MERN stack, best served on mobile.</p>
+      <p className="user-info">Create a dummy user or login with <span className="credentials">user1@email.com // Passw0rd.</span></p>
+      </div>
     </div>
     
   )

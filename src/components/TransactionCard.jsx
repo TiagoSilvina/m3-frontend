@@ -19,9 +19,10 @@ function TransactionCard() {
       const date = new Date(dateString);
       return date.toLocaleDateString();
     };
+
    
   return (
-    <div>
+    <div className="transactions">
       {transactions &&
       transactions
         .slice()
@@ -30,16 +31,16 @@ function TransactionCard() {
           return (
             <div key={transaction._id} className="transaction-card">
               <Link to={`/transactions/${transaction._id}`}>
-                <div>
-                <h3>{transaction.text}</h3>
+                <div className="transaction-details">
+                <h3 className={transaction.amount >0 ? "positive": "negative"}>{transaction.text}</h3>
                 <p>{transaction.description}</p>
-                <p className={transaction.amount >0 ? "money-plus": "money-minus"}> {transaction.amount} €</p>
+                <p className={transaction.amount >0 ? "positive": "negative"}> {transaction.amount} €</p>
                 <p>{formatDate(transaction.date)}</p>
                 {/* <img src={switch (transaction.)}/> */}
                 </div>
               </Link>
-              <Link to={`/edit-transaction/${transaction._id}`}>
-              <p className="btn">Edit transaction</p>
+              <Link className="edit-transaction" to={`/edit-transaction/${transaction._id}`}>
+              Edit transaction
               </Link>
             </div>
           );

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import transactionsService from "../services/transactions.service";
+import { Link } from "react-router-dom";
 
 function AddTransactionPage() {
   const [text, setText] = useState("");
@@ -33,14 +34,14 @@ function AddTransactionPage() {
     .catch((error) => console.log(error));
   }
   return (
-    <div>
-      <h3>Add new transaction</h3>
-      <form onSubmit={handleSubmit}>
-
-      <div className="form-control">
-      <label>name</label>
+    <div className="add-page">
+      <div className="form-container">
+      <form className="add-form" onSubmit={handleSubmit}>
+      <div className="form-element">
+      <label className="form-label">Name</label>
       <input
-      value={text}
+      className="form-input"
+      value={text} 
       name="text"
       type="text"
       required
@@ -49,15 +50,15 @@ function AddTransactionPage() {
       />
       </div>
 
-      <div className="form-control">
-     <label>Expense</label>
+      <div className="form-element">
+     <label className="form-label">Expense</label>
       <input 
       value="Expense"
       name="type" 
       type="radio" 
       onChange={(e) => setType(e.target.value)}
       ></input>
-      <label>Income</label> 
+      <label className="form-label">Income</label> 
       <input 
       value="Income"
       name="type" 
@@ -66,16 +67,17 @@ function AddTransactionPage() {
       ></input>
       </div>
 
-      <div className="form-control">
+      <div className="form-element-select">
       {type === "Expense" && (
-      <label>
-      Category:
-      <select 
+      <label className="form-label">
+
+      <select
+      className="form-input"
       value={category}
       name="category"
       type="text"
       onChange={(e) => setCategory(e.target.value)} >
-      <option value="">----</option>
+      <option>-----</option>
       <option value="Other">Other</option>
       <option value="Debt Payments">Debt Payments</option>
       <option value="Education">Education</option>
@@ -90,16 +92,18 @@ function AddTransactionPage() {
       )}
       </div>
 
-      <div className="form-control">
+      <div className="form-element">
       {type === "Income" && (
-      <label>
-      Category:
-      <select 
+      <label className="form-label">
+     
+      <select
+      className="form-input"
+
       value={category}
       name="category"
       type="text"
       onChange={(e) => setCategory(e.target.value)}>
-      <option value="">----</option>
+      <option>-----</option>
       <option value="Paycheck" >Paycheck</option>
       <option value="Investments">Investments</option>
       <option value="Other">Other</option>
@@ -107,9 +111,10 @@ function AddTransactionPage() {
       </label>)}
       </div>
 
-      <div className="form-control">
-      <label>Description</label>
+      <div className="form-element">
+      <label className="form-label">Description</label>
       <input
+      className="form-input"
       value={description}
       name="description"
       type="text"
@@ -118,9 +123,10 @@ function AddTransactionPage() {
       />
       </div>
       
-      <div className="form-control">
-      <label>Amount (- for expenses)</label>
+      <div className="form-element">
+      <label className="form-label">Amount (- for expenses)</label>
       <input
+      className="form-input"
       value={amount}
       name="amount"
       type="number"
@@ -130,9 +136,11 @@ function AddTransactionPage() {
       />
       </div>
 
-      <div className="form-control">
-      <label>Date</label>
+      <div className="form-element">
+      <label className="form-label">Date</label>
       <input
+      className="form-input"
+      /* className="input input-bordered w-full max-w-xs" */
       value={date}
       name="date"
       type="date"
@@ -140,19 +148,23 @@ function AddTransactionPage() {
       />
       </div>
 
-      <div className="form-control">
-      <label>Add Receipt</label>
+      <div className="form-element">
+      <label className="form-label">Add Receipt</label>
       <input
+      className="form-input"
       value={receipt}
       name="receipt"
       type="text"
       placeholder="url of receipt (optional)"
       onChange={(e) => setReceipt(e.target.value)}
       />
-      </div> 
-
-      <button className="btn" type="submit">Add transaction</button>
-      </form>   
+      </div>
+      <div className="btn-bg">
+      <button className="add-btn" type="submit">Add transaction</button>
+      </div>
+      </form>
+          <Link className="del-btn" to="/transactions">Back</Link>
+    </div>
     </div>
   )
 }

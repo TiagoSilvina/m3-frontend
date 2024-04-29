@@ -32,53 +32,46 @@ function Signup() {
   };
 
   return (
-    <div>
-      <h1>Sign-up</h1>
-      <form onSubmit={handleSignUpSubmit}>
-        <div className="form-control">
-          <label>Email:</label>
-          <input
-            type="email"
-            name="email"
-            value={email}
-            placeholder="Enter your e-mail"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="form-control">
-          <label>Password:</label>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            placeholder="Choose a password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <div className="form-control">
-          <label>Username:</label>
-          <input
-            type="text"
-            name="username"
-            value={name}
-            placeholder="Choose a Username"
-            onChange={(e) => setName(e.target.value)}
-          />
-        </div>
-        <div className="form-control">
-          <label>Profile Picture</label>
-          <input
-            type="text"
-            name="img"
-            value={img}
-            placeholder="Enter picture URL"
-            onChange={(e) => setImg(e.target.value)}
-          />
-        </div>
-        <div>
-          <button className="btn" type="submit">Sign Up</button>
-        </div>
-      </form>
+    <div className="enter-page">
+      <div className="form-container">
+        <h1>Sign Up</h1>
+        <form className="enter-form" onSubmit={handleSignUpSubmit}>
+          <div className="form-element">
+          <label className="enter-label">Username</label>
+            <input className="enter-input"
+              type="text"
+              placeholder="Username"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
+          <div className="form-element">
+          <label className="enter-label">Email</label>
+            <input className="enter-input" 
+              type="text"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          
+          <div className="form-element">
+          <label className="enter-label">Password</label>
+            <input className="enter-input" 
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)} 
+            />
+          </div>
+          
+          <div className="form-element-btn">
+          <button className="form-btn" type="submit">Sign up</button>
+          </div>
+          
+          
+        </form>
+      </div>
     </div>
   );
 }

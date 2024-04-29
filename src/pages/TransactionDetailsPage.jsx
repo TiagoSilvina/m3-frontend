@@ -23,17 +23,23 @@ function TransactionDetailsPage() {
   }, [id]);
 
   return (
-    <div>
+    <div className="page">
+      <div className="balance-box">
       <Balance/>
+      </div>
+      <div className="transactions">
         {transaction && (<div className="transaction-card">
-        <div>
-          <h3>{transaction.text}</h3>
+        <div className="">
+          <div className="transaction-details">
+          <h3 className={transaction.amount >0 ? "positive": "negative"}>{transaction.text}</h3>
           <p>{transaction.type}</p>
           <p>{transaction.category}</p>
           <p>{transaction.description}</p>
-          <p className={transaction.amount >0 ? "money-plus": "money-minus"}>{transaction.amount} €</p>
+          <p className={transaction.amount >0 ? "positive": "negative"}>{transaction.amount} €</p>
           <p>{formatDate(transaction.date)}</p>
-          <Link className="btn" to="/transactions">Back</Link>
+          </div>
+          <Link className="back-btn" to="/transactions">Back</Link>
+         
           <div className="receipt" >
             <img  className="receipt-img" src={transaction.receipt} alt="picture of receipt"
             style={{ display: transaction.receipt ? 'inline-block' : 'none' }}/>
@@ -41,6 +47,7 @@ function TransactionDetailsPage() {
         </div>
         </div>
       )}
+      </div>
     </div>
   )
 }

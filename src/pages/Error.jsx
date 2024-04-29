@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Error() {
   return (
-    <div>
+    <div className="page">
         <h1>Something went wrong</h1>
     </div>
   )

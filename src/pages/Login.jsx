@@ -31,43 +31,47 @@ function Login() {
   };
 
   return (
-    <div>
-      <h1>Login</h1>
-      <form onSubmit={handleLoginSubmit}>
-        <div className="form-control">
-          <label>Email:</label>
-          <input
-            type="email"
-            name="email"
-            value={email}
-            placeholder="Enter e-mail"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="form-control">
-          <label>Password:</label>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            placeholder="Enter Password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <div className="form-control">
-          <label>Profile Picture</label>
-          <input
-            type="text"
-            name="img"
-            value={img}
-            placeholder="Edit picture URL"
-            onChange={(e) => setImg(e.target.value)}
-          />
-        </div>
-        <div>
-        <button className="btn" type="submit">Login</button>
-        </div>
-      </form>
+    <div className="enter-page">
+      <div className="form-container">
+        <h1>Login</h1>
+        <form className="enter-form" onSubmit={handleLoginSubmit}>
+          <div className="form-element">
+          <label className="enter-label">Email</label>
+            <input className="enter-input" 
+              type="text"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          
+          <div className="form-element">
+          <label className="enter-label">Password</label>
+            <input className="enter-input" 
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)} 
+            />
+          </div>
+          
+          {/* <div className="form-element">
+          <label className="enter-label">Profile picture</label>
+            <input className="enter-input"
+              type="text"
+              name="img"
+              placeholder="Edit picture URL"
+              value={img}
+              onChange={(e) => setImg(e.target.value)}
+            />
+          </div> */}
+          <div className="form-element-btn">
+          <button className="form-btn" type="submit">Login</button>
+          </div>
+          
+          
+        </form>
+      </div>
     </div>
   );
 };
